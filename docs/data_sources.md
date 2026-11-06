@@ -1,6 +1,6 @@
 # Data sources
 
-## Transcripts — `kurry/sp500_earnings_transcripts` (Hugging Face) — PROPOSED, awaiting user confirmation
+## Transcripts — `kurry/sp500_earnings_transcripts` (Hugging Face) — CONFIRMED by user 2026-11-06
 - URL: https://huggingface.co/datasets/kurry/sp500_earnings_transcripts
 - Licence: MIT per dataset card, "for research and educational use only". Original transcript provenance is **not stated** on the card (Capital IQ company ids suggest a S&P Capital IQ origin). Transcript text is never committed to git (`data/` is ignored).
 - Probed: 2026-11-06 via `scripts/probe_coverage.py` (metadata only).
@@ -29,5 +29,5 @@
 ## Prices — `yfinance` (daily adjusted close), benchmark SPY
 Not yet downloaded. Record download date and yfinance version in M4.
 
-## Lexicon — Loughran-McDonald Master Dictionary (Notre Dame SRAF)
-Not yet downloaded. Record version and download date in M2.
+## Lexicon — Loughran-McDonald Master Dictionary 1993-2025 (Notre Dame SRAF)
+Downloaded 2026-11-06 from https://sraf.nd.edu/loughranmcdonald-master-dictionary/ (free for academic research; commercial use needs a licence). Stored at data/raw/LM_MasterDictionary.csv (git-ignored).

@@ -12,3 +12,4 @@ pyarrow
 datasets
 pytest
 ruff
+pandas_market_calendars

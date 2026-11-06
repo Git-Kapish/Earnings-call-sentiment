@@ -14,3 +14,8 @@ finbert:
   revision: null   # pin to a commit hash in M3
   batch_size: 32
   max_tokens: 512
+basket:
+  n_tickers: 60
+  min_calls: 16
+  start: "2015-01-01"
+  end: "2024-12-31"
