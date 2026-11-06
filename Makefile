@@ -4,6 +4,7 @@ setup:
 	$(PY) -m pip install -r requirements.txt
 data:
 	PYTHONPATH=src $(PY) scripts/make_data.py
+	PYTHONPATH=src $(PY) scripts/make_prices.py
 score:
 	PYTHONPATH=src $(PY) scripts/make_scores.py
 events:
