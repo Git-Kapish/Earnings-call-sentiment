@@ -23,3 +23,14 @@ def fetch_sectors(tickers: list[str], workers: int = 8) -> pd.Series:
     with ThreadPoolExecutor(workers) as ex:
         out = list(ex.map(_sector, tickers))
     return pd.Series(out, index=tickers, name="sector")
+
+
+def download_prices(tickers: list[str], start: str, end: str) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Daily split/dividend-adjusted close and volume, wide (date x ticker). Dates are exchange
+    session dates (yfinance daily bars); no calendar-day arithmetic is done on them."""
+    d = yf.download([t.replace(".", "-") for t in tickers], start=start, end=end, auto_adjust=True,
+                    progress=False, threads=True)
+    close, vol = d["Close"], d["Volume"]
+    for x in (close, vol):
+        x.columns = [c.replace("-", ".") for c in x.columns]
+    return close.sort_index(), vol.sort_index()
