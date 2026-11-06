@@ -26,10 +26,7 @@ R.coef_plot(hr[hr.car == car], "coef_plot.png")
 prim = pd.read_csv("results/tables/primary.csv")
 hrp = hr[hr.car == car][["spec", "x", "coef", "se", "t", "p", "n", "adj_r2"]]
 with open("results/tables/summary.md", "w") as f:
-    f.write("## Primary spec (pre-declared)\n\n" + "```
-" + prim.round(4).to_string(index=False) + "
-```" + "\n\n")
-    f.write("## Horse race, CAR[0,+1] (z-scored tone; SE clustered by firm)\n\n" + "```
-" + hrp.round(4).to_string(index=False) + "
-```" + "\n")
+    f.write("## Primary spec (pre-declared)\n\n```\n" + prim.round(4).to_string(index=False) + "\n```\n\n")
+    f.write("## Horse race, CAR[0,+1] (z-scored tone; SE clustered by firm)\n\n```\n"
+            + hrp.round(4).to_string(index=False) + "\n```\n")
 logging.info("report done")
