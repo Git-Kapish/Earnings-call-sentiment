@@ -1,0 +1,16 @@
+seed: 42
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+event:
+  estimation_window: [-250, -30]
+  car_windows: [[0, 1], [0, 3], [0, 5]]
+  primary_window: [0, 1]
+  min_estimation_obs: 120
+  benchmark: SPY
+finbert:
+  model: ProsusAI/finbert
+  revision: null   # pin to a commit hash in M3
+  batch_size: 32
+  max_tokens: 512
