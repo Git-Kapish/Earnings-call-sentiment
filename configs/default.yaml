@@ -9,6 +9,7 @@ event:
   primary_window: [0, 1]
   min_estimation_obs: 120
   benchmark: SPY
+  primary_rule: alt   # before_open+during -> call date, after_close -> next day (user decision 2026-11-06); PRD rule = robustness
 finbert:
   model: ProsusAI/finbert
   revision: null   # pin to a commit hash in M3
